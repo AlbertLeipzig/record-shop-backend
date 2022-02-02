@@ -1,7 +1,7 @@
 const express = require ("express")
 const app = express()
-const port = 5000
-const cors = require("cors")
+const port = process.env.PORT || 5000
+
 /* 
 const corsMiddleware = (request, response, next) => {
     response.header("Access-Control-Allow-Origin", "*");
@@ -10,7 +10,6 @@ const corsMiddleware = (request, response, next) => {
 
   app.use(corsMiddleware)
  */
-app.use(cors)
 
   app.get("/records", (req, res) => {
     res.json([
